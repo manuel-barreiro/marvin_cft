@@ -1,21 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Oak Colors */
+    --dark-oak: 48 38 29;
+    --oak-100: 100 81 61;
+    --oak-75: 139 124 109;
+    --oak-60: 162 150 138;
+    --oak-45: 185 177 168;
+    --oak-30: 209 203 197;
+    --oak-15: 232 229 226;
+
+    /* Base colors */
+    --background: 255 255 255;
+    --foreground: 48 38 29; /* dark-oak */
+    
+    /* Card colors */
+    --card: 255 255 255;
+    --card-foreground: 48 38 29;
+    
+    /* Popover colors */
+    --popover: 255 255 255;
+    --popover-foreground: 48 38 29;
+    
+    /* Primary colors - Using Pantone 299C */
+    --primary: 0 160 223;
+    --primary-foreground: 255 255 255;
+    
+    /* Secondary colors - Using Pantone 326C */
+    --secondary: 0 175 170;
+    --secondary-foreground: 255 255 255;
+    
+    /* Muted colors */
+    --muted: 232 229 226; /* oak-15 */
+    --muted-foreground: 100 81 61; /* oak-100 */
+    
+    /* Accent colors - Using Pantone 7548C */
+    --accent: 255 198 0;
+    --accent-foreground: 48 38 29;
+    
+    /* Destructive colors - Using Pantone 206C */
+    --destructive: 213 0 55;
+    --destructive-foreground: 255 255 255;
+    
+    /* Border colors */
+    --border: 209 203 197; /* oak-30 */
+    --input: 185 177 168; /* oak-45 */
+    --ring: 0 160 223; /* pantone-299c */
+    
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 48 38 29; /* dark-oak */
+    --foreground: 232 229 226; /* oak-15 */
+ 
+    --card: 48 38 29;
+    --card-foreground: 232 229 226;
+ 
+    --popover: 48 38 29;
+    --popover-foreground: 232 229 226;
+ 
+    --primary: 0 160 223; /* pantone-299c */
+    --primary-foreground: 255 255 255;
+ 
+    --secondary: 0 175 170; /* pantone-326c */
+    --secondary-foreground: 255 255 255;
+ 
+    --muted: 100 81 61; /* oak-100 */
+    --muted-foreground: 185 177 168; /* oak-45 */
+ 
+    --accent: 255 198 0; /* pantone-7548c */
+    --accent-foreground: 48 38 29;
+ 
+    --destructive: 213 0 55; /* pantone-206c */
+    --destructive-foreground: 232 229 226;
+ 
+    --border: 100 81 61; /* oak-100 */
+    --input: 100 81 61;
+    --ring: 0 160 223;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
